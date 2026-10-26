@@ -1,0 +1,123 @@
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alicia en el país de las maravillas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Alicia en el país de las maravillas</h1>
+    <p>Tres aventuras para practicar formularios y JavaScript</p>
+    <nav aria-label="Ejercicios">
+      <a href="#ejercicio-1">1. Poción</a>
+      <a href="#ejercicio-2">2. Merienda</a>
+      <a href="#ejercicio-3">3. Reina</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- EJERCICIO 1 -->
+    <section id="ejercicio-1" class="tarjeta pocion">
+      <h2>Ejercicio 1. La poción mágica de Alicia</h2>
+      <p>Alicia encontró una poción que la hace encoger. ¿Podrá atravesar la pequeña puerta del jardín?</p>
+      <p class="regla">
+        <strong>Regla mágica:</strong> nueva altura = altura inicial × (1 − ml / 100).<br>
+        Altura de la puerta: <strong>40 cm</strong>. Poción permitida: <strong>1 a 80 ml</strong>. Altura permitida: <strong>1 a 250 cm</strong>.
+      </p>
+      <form id="form-pocion" novalidate>
+        <label for="altura">Altura inicial de Alicia (cm)</label>
+        <input type="number" id="altura" step="0.1" placeholder="Ej: 150">
+
+        <label for="pocion-ml">Cantidad de poción (ml)</label>
+        <input type="number" id="pocion-ml" step="0.1" placeholder="Ej: 75">
+
+        <button type="submit">Beber poción</button>
+        <button type="reset" class="secundario">Limpiar</button>
+      </form>
+      <p id="error-pocion" class="error" role="alert"></p>
+      <div id="resultado-pocion" class="resultado" role="status" hidden>
+        <p>Altura final: <strong id="res-altura-final"></strong></p>
+        <p id="res-mensaje-pocion"></p>
+      </div>
+    </section>
+
+    <!-- EJERCICIO 2 -->
+    <section id="ejercicio-2" class="tarjeta merienda">
+      <h2>Ejercicio 2. La merienda del Sombrerero Loco</h2>
+      <p>El Sombrerero sirve bebidas a sus invitados. Elige la tuya y cuántas tazas quieres.</p>
+      <p class="regla">
+        <strong>Precios por taza:</strong> Té $3.50 · Café $4.00 · Chocolate $5.00 · Limonada $3.00.<br>
+        <strong>Descuento:</strong> 10 % si pides 5 tazas o más. Máximo: <strong>20 tazas</strong>.
+      </p>
+      <form id="form-merienda" novalidate>
+        <label for="nombre">Nombre del invitado</label>
+        <input type="text" id="nombre" placeholder="Ej: Ana">
+
+        <label for="bebida">Bebida</label>
+        <select id="bebida">
+          <option value="">-- Elige una bebida --</option>
+          <option value="te">Té</option>
+          <option value="cafe">Café</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="limonada">Limonada</option>
+        </select>
+
+        <label for="tazas">Cantidad de tazas</label>
+        <input type="number" id="tazas" step="1" placeholder="Ej: 3">
+
+        <button type="submit">Pedir</button>
+        <button type="reset" class="secundario">Limpiar</button>
+      </form>
+      <p id="error-merienda" class="error" role="alert"></p>
+      <div id="resultado-merienda" class="resultado" role="status" hidden>
+        <ul>
+          <li>Invitado: <strong id="res-nombre"></strong></li>
+          <li>Bebida: <strong id="res-bebida"></strong></li>
+          <li>Cantidad: <strong id="res-cantidad"></strong></li>
+          <li>Precio unitario: <strong id="res-precio"></strong></li>
+          <li>Subtotal: <strong id="res-subtotal"></strong></li>
+          <li>Descuento: <strong id="res-descuento"></strong></li>
+          <li>Total a pagar: <strong id="res-total"></strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EJERCICIO 3 -->
+    <section id="ejercicio-3" class="tarjeta reina">
+      <h2>Ejercicio 3. El desafío de la Reina de Corazones</h2>
+      <p>La Reina ordena numerar las cartas. Separa las pares de las impares y dile quién suma más.</p>
+      <p class="regla">Ingresa un entero entre <strong>1 y 100</strong>.</p>
+      <form id="form-reina" novalidate>
+        <label for="cartas">Cantidad de cartas</label>
+        <input type="number" id="cartas" step="1" placeholder="Ej: 10">
+
+        <button type="submit">Analizar cartas</button>
+        <button type="reset" class="secundario">Limpiar</button>
+      </form>
+      <p id="error-reina" class="error" role="alert"></p>
+      <div id="resultado-reina" class="resultado" role="status" hidden>
+        <p>Secuencia: <span id="res-secuencia"></span></p>
+        <ul>
+          <li>Pares: <span id="res-lista-pares"></span></li>
+          <li>Impares: <span id="res-lista-impares"></span></li>
+          <li>Cantidad de pares: <strong id="res-cant-pares"></strong></li>
+          <li>Cantidad de impares: <strong id="res-cant-impares"></strong></li>
+          <li>Suma de pares: <strong id="res-suma-pares"></strong></li>
+          <li>Suma de impares: <strong id="res-suma-impares"></strong></li>
+        </ul>
+        <p id="res-ganador"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Práctica de Programación Web I · HTML, CSS y JavaScript nativo</p>
+  </footer>
+
+  <script src="js/pocion.js"></script>
+  <script src="js/merienda.js"></script>
+  <script src="js/reina.js"></script>
+</body>
+</html>
