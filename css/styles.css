@@ -1,0 +1,160 @@
+/* Paleta inspirada en la obra: azul del vestido, rojo de las cartas, verde del Sombrerero, crema del mantel y dorado de la llave. */
+:root {
+  --azul: #1f4e79;
+  --rojo: #a61c2b;
+  --verde: #2e6b3e;
+  --crema: #fdf6e3;
+  --dorado: #c9a227;
+  --texto: #23232f;
+  --acento: var(--azul);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--crema);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--azul);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-bottom: 6px solid var(--dorado);
+}
+header h1 {
+  margin: 0 0 0.3rem;
+  font-size: 1.7rem;
+}
+header p {
+  margin: 0 0 0.8rem;
+}
+
+nav a {
+  display: inline-block;
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border: 2px solid var(--dorado);
+  border-radius: 20px;
+  text-decoration: none;
+}
+nav a:hover {
+  background: var(--dorado);
+  color: var(--texto);
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.tarjeta {
+  background: #ffffff;
+  border-top: 8px solid var(--acento);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.pocion {
+  --acento: var(--azul);
+}
+.merienda {
+  --acento: var(--verde);
+}
+.reina {
+  --acento: var(--rojo);
+}
+
+.tarjeta h2 {
+  color: var(--acento);
+  margin-top: 0;
+}
+
+.regla {
+  background: var(--crema);
+  border-left: 5px solid var(--dorado);
+  padding: 0.6rem 0.8rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.9rem;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid #6b6b7b;
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--texto);
+}
+
+button {
+  display: inline-block;
+  margin: 1rem 0.4rem 0 0;
+  padding: 0.65rem 1.2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #ffffff;
+  background: var(--acento);
+  border: 2px solid var(--acento);
+  border-radius: 6px;
+  cursor: pointer;
+}
+button.secundario {
+  background: #ffffff;
+  color: var(--acento);
+}
+
+input:focus,
+select:focus,
+button:focus,
+a:focus {
+  outline: 3px solid var(--dorado);
+  outline-offset: 2px;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: #fbe9ea;
+  color: #7a1019;
+  border-left: 6px solid var(--rojo);
+  border-radius: 6px;
+}
+.error:empty {
+  display: none;
+}
+
+.resultado {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #eef5ee;
+  border-left: 6px solid var(--verde);
+  border-radius: 6px;
+}
+.resultado[hidden] {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
